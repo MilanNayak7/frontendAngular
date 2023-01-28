@@ -1,1 +1,35 @@
-<p>login works!</p>
+<div class="container">
+    <div class="row" style="margin-top:20px;">
+        <div class="col-md-6 offset-md-3">
+            <div class="container text-center">
+                <img src="../../../assets/images/hat.png" style="height:20%;width: 20%;" alt="image">
+            </div>
+
+            <h1 class="text-center">Login Here</h1>
+            <form >
+                <!-- Username field -->
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>UserName</mat-label>
+                    <input
+                   
+                    matInput placeholder="Enter Your Name">
+                    <mat-hint>Enter hint</mat-hint>
+                </mat-form-field>
+
+                <!-- Password field -->
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input 
+                  
+                    name="password"
+                    matInput placeholder="Enter Password">
+                    <mat-hint>Enter hint</mat-hint>
+                </mat-form-field>
+
+                <div class="container text-center">
+                    <button type="submit" mat-raised-button color="primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

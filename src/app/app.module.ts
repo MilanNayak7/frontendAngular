@@ -14,6 +14,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HomeComponent } from './pages/home/home.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './services/auth-interceptor';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+
 
 
 @NgModule({
@@ -24,6 +31,9 @@ import { HomeComponent } from './pages/home/home.component';
     SignupComponent,
     LoginComponent,
     HomeComponent,
+    DashboardComponent,
+    UserDashboardComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -33,9 +43,14 @@ import { HomeComponent } from './pages/home/home.component';
     MatInputModule,
     FormsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatIconModule,
+    
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

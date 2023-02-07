@@ -1,1 +1,23 @@
-<p>navbar works!</p>
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu_book</mat-icon>
+
+  </button>
+
+  <a routerLink="login"><span>EzyLearn</span></a>
+  <span class="example-spacer"></span>
+
+
+  <a *ngIf="!isLoggedIn" routerLink="login">
+    Login
+  </a>
+
+  <a *ngIf="!isLoggedIn" routerLink="signup" class="ml20">
+    Signup
+  </a>
+
+  <button *ngIf="isLoggedIn" (click)="logout()">
+    Logout
+  </button>
+
+</mat-toolbar>

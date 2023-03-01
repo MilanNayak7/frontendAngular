@@ -1,0 +1,19 @@
+<mat-card style="margin-top:10px;">
+  <h1>Add New Category</h1>
+<form (ngSubmit)="formSubmit()">
+    <div style="margin-left:20px; margin-top: 20px;margin-right: 20px;margin-bottom: 20px;">
+
+        <div class="mb-3">
+            <label for="category" class="form-label">Enter the Category Name</label>
+            <input autofocus type="text" class="form-control"[(ngModel)]="category.title" name="title">
+          </div>
+
+          <div>
+            <label for="description" class="form-label">Enter Description</label>
+            <textarea autofocus class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="category.description" name="description"></textarea>
+          </div>
+          
+          <div style="margin-top:15px;"><button type="submit" class="btn btn-primary">Submit</button></div>
+    </div>
+</form>
+  </mat-card>

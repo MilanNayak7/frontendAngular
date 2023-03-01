@@ -21,7 +21,7 @@ export class SignupComponent {
   };
 
   formSubmit(){
-    
+    console.log("Submit Button is clicked");
     console.log(this.user);
     if(this.user.userName == '' || this.user.userName == null){
       this.snack.open('Username is required !!','ok',{

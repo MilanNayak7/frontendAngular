@@ -1,0 +1,27 @@
+    <mat-list>
+        <h2>All Categories</h2>
+        <div *ngFor="let c of categores">
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="" alt="">
+      
+                        <div class="card-body">
+                            <h2 class="card-title"><b>{{c.title}}</b></h2>
+                            <p class="card-text">
+                               {{c.description}}
+                            </p>
+      
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                Card link
+                            </a>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a routerLink="/admin/add-category" class="btn btn-primary col-3 btn-md">
+           Add Category
+        </a>
+    </mat-list>

@@ -20,8 +20,27 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './services/auth-interceptor';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
-
-
+import { ProfileComponent } from './pages/profile/profile.component';
+import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import {MatDividerModule} from '@angular/material/divider';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
+import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
+import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
+import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
+import { UserSidebarComponent } from './pages/user/user-sidebar/user-sidebar.component';
+import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
+import { StartComponent } from './pages/user/start/start.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @NgModule({
   declarations: [
@@ -33,6 +52,21 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     HomeComponent,
     DashboardComponent,
     UserDashboardComponent,
+    ProfileComponent,
+    SidebarComponent,
+    WelcomeComponent,
+    ViewCategoriesComponent,
+    AddCategoryComponent,
+    ViewQuizzesComponent,
+    AddQuizComponent,
+    UpdateQuizComponent,
+    ViewQuizQuestionsComponent,
+    AddQuestionComponent,
+    UserSidebarComponent,
+    LoadQuizComponent,
+    InstructionsComponent,
+    StartComponent,
+    
     
   ],
   imports: [
@@ -46,7 +80,13 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
     MatSnackBarModule,
     MatToolbarModule,
     MatIconModule,
-    
+    MatListModule,
+    MatCardModule,
+    MatDividerModule,
+    MatSlideToggleModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    NgxSkeletonLoaderModule
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true

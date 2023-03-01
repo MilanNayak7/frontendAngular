@@ -10,7 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent {
 
-  constructor(private snack: MatSnackBar, private login: LoginService,private router:Router) { }
+  constructor(private snack: MatSnackBar, private login: LoginService, private router: Router) { }
   loginData = {
     username: '',
     password: ''
@@ -47,7 +47,7 @@ export class LoginComponent {
             } else if (this.login.getUserRole() == 'NORMAL') {
 
               //window.location.href = '/user-dashboard';
-              this.router.navigate(['user-dashboard']);
+              this.router.navigate(['user-dashboard/0']);
               this.login.loginStatusSubject.next(true);
             }
             else {
@@ -59,8 +59,8 @@ export class LoginComponent {
       (error) => {
         console.log("error");
         console.log(error);
-        this.snack.open('Invalid Details !! Try again','',{
-          duration:3000,
+        this.snack.open('Invalid Details !! Try again', '', {
+          duration: 3000,
         });
       }
     );

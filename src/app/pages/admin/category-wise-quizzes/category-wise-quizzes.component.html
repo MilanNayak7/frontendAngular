@@ -1,0 +1,31 @@
+<div class="container">
+    <p class="boldPara">All Quizzes</p>
+    <hr>
+    <div class="row g-3">
+            <mat-card class="parentCard col-12 col-md-5 col-lg-3 mt20" *ngFor="let q of quizzes">
+                <mat-card-content>
+                        <!-- <img src="./images/europe.jpg" class="card-img-top" alt="A Street in Europe"> -->
+                        <div class="card-body">
+                            <p class="card-title">{{q.title}}</p>
+                            <p class="subTitle"></p>
+                            <mat-card-subtitle>{{q.category.title}}</mat-card-subtitle>
+                            <hr>
+                            <table>
+                                <td>
+                                    <p class="table-header">Total Question</p>
+                                    <p class="table-header">Total Mark</p>
+                                    <p class="table-header">Question Status</p>
+                                    <p class="table-header">Attempted</p>
+                                </td>
+                                <td>
+                                    <p class="table-header">: {{q.numberOfQuestions}}</p>
+                                    <p class="table-header">: {{q.maxMarks}}</p>
+                                    <p class="table-header">: {{q.active}}</p>
+                                    <p class="table-header">: {{q.maxMarks}}</p>
+                                </td>
+                            </table>
+                            <a [routerLink]="'/admin/view-questions/'+q.qId+'/'+q.title"  class="btn">View / Update</a> 
+                        </div>
+                </mat-card-content>
+            </mat-card>
+ 

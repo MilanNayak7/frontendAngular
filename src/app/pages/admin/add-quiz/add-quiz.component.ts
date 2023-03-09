@@ -34,7 +34,7 @@ export class AddQuizComponent implements OnInit{
       cid:'',
     },
   };
-  
+    
  
   constructor(
     private cat:CategoryService,
@@ -53,7 +53,7 @@ export class AddQuizComponent implements OnInit{
     },
     error: err => {
       console.error(err);
-      Swal.fire('server error !!','Error in loading the data','success');
+      Swal.fire('server error !!','Error in loading the data','error');
     },
     complete: () => {
       console.log('Done!');
@@ -82,7 +82,7 @@ export class AddQuizComponent implements OnInit{
     },
     error: err => {
       console.error(err);
-      Swal.fire('server error !!','Error in loading data','success');
+      Swal.fire('server error !!','Error in loading data','error');
     },
     complete: () => {
       console.log('Done!');

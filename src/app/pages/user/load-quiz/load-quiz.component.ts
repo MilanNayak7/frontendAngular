@@ -1,6 +1,8 @@
 import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observer } from 'rxjs';
 import { QuizService } from 'src/app/services/quiz.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-load-quiz',
@@ -18,31 +20,47 @@ export class LoadQuizComponent implements OnInit {
       this.catId = params['catId'];
       if (this.catId == 0) {
         console.log('Load all the quiz');
-
-        this.quiz.getActiveQuizzes().subscribe(
-          (data: any) => {
-            this.quizzes = data;
-            this.load = false;
-            console.log(this.quizzes);
-          },
-          (error) => {
-            console.log(error);
-            alert('error in loading all quizzes');
-          }
-        );
+        this.quiz.getActiveQuizzes().subscribe(this.getActiveQuizzesObserver)
       } else {
         console.log('Load specific quiz');
 
-        this.quiz.getActiveQuizzesOfCategory(this.catId).subscribe(
-          (data: any) => {
-            this.quizzes = data;
-            console.log(this.quizzes);
-          },
-          (error) => {
-            alert('error in loading quiz data');
-          }
-        );
+        this.quiz.getActiveQuizzesOfCategory(this.catId).subscribe(this.getActiveCategoryWiseQuizzeObserver)
       }
-    });
+    }
+    );
   }
+
+  getActiveCategoryWiseQuizzeObserver: Observer<any> = {
+    next: value => {
+      this.quizzes = value;
+      console.log(this.quizzes);
+    },
+    error: err => {
+      console.error(err);
+      Swal.fire('server error !!','Error in loading the data','error');
+    },
+    complete: () => {
+      console.log('Done!');
+    }
+  };
+
+
+  getActiveQuizzesObserver: Observer<any> = {
+    next: value => {
+      this.quizzes = value;
+      this.load = false;
+      console.log(this.quizzes);
+    },
+    error: err => {
+      console.error(err);
+      Swal.fire('server error !!','Error in loading the data','error');
+    },
+    complete: () => {
+      console.log('Done!');
+    }
+  };
+
+
 }
+  
+

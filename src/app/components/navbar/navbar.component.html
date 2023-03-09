@@ -1,23 +1,22 @@
-<mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu_book</mat-icon>
-
-  </button>
-
-  <a routerLink="login"><span>EzyLearn</span></a>
-  <span class="example-spacer"></span>
-
-
-  <a *ngIf="!isLoggedIn" routerLink="login">
-    Login
-  </a>
-
-  <a *ngIf="!isLoggedIn" routerLink="signup" class="ml20">
-    Signup
-  </a>
-
-  <button *ngIf="isLoggedIn" (click)="logout()">
-    Logout
-  </button>
-
-</mat-toolbar>
+<nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
+      <div class="container-fluid"><a class="navbar-brand" href="#">EzyLearn</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse"
+              id="navcol-1">
+              <ul class="nav navbar-nav">
+                  <li class="nav-item" role="presentation"><a class="nav-link" href="#">Contact</a></li>
+                   <li class="nav-item" role="presentation"><a class="nav-link" href="#">About</a></li>
+                  <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Services</a>
+                      <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Logo design</a><a class="dropdown-item" role="presentation" href="#">Banner design</a><a class="dropdown-item" role="presentation" href="#">content writing</a></div>
+                  </li>
+                  <li class="nav-item" role="presentation"><a class="nav-link" routerLink="user-dashboard/0">Exam</a></li>
+              </ul>
+              <span *ngIf="!isLoggedIn" class="navbar-text spanLogin"> 
+                <a class="btn aaction login" routerLink="login">LogIn</a>
+              </span>
+              <span *ngIf="isLoggedIn"  class="navbar-text spanLogout">
+                <a class="btn aaction login"(click)="logout()">Logout</a>
+              </span>
+              <a class="btn aaction signup" routerLink="signup" *ngIf="!isLoggedIn">Signup</a>
+            </div>
+      </div>
+  </nav>

@@ -4,9 +4,42 @@
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight:500;
   }
   .example-header-image {
     background-image: url("../../../../assets/custom_icon/exam1.png");
     background-size: cover;
   }
-  
+
+  .examCard:hover{
+    transform: scale(1.01);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+  }
+   
+  .blueHeading{
+    color: blue;
+  }
+.boldHeading{
+  font-size:xx-large;
+  font-weight: 500;
+  color: blue;
+}
+
+.btn{
+  color: blue;
+}
+
+.boldPara{
+  font-size: x-large;
+  font-weight:500;
+}
+
+.divider{
+  margin-left: 20px;
+  margin-right:20px;
+}
+
+.img{
+  height:30%;
+  width:30%;
+}

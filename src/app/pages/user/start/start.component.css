@@ -1,0 +1,33 @@
+.fontBold{
+    font-size:x-large;
+    font-weight:500;
+}
+
+.headFontBlod{
+    font-size:xx-large;
+    font-weight:500;
+}
+
+.mark{
+    color: blue;  
+}
+
+.parent{
+    display: flex;
+}
+
+.child{
+    flex: 1;
+    margin:10px;
+}
+
+.questionForn{
+    font-weight:500;
+    font-size:16px;
+}
+
+.boldPara{
+    font-size: x-large;
+    font-weight:600;
+    color: blue;
+}

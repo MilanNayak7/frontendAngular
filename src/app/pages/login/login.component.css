@@ -1,3 +1,44 @@
-.full-width{
+/* .full-width{
     width: 100%;
+} */
+
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.parentSection {
+    margin-top: 20px;
+}
+
+.parentDiv {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.img-fluid {
+    height: 500px;
+}
+
+.form {
+    min-height: 50px;
+    margin: 40px;
+}
+
+.btn {
+    width: 100%;
+}
+
+.FacebookBtn {
+    width: 100%;
+    background-color: #3b5998;
+}
+
+.TwitterBtn {
+    width: 100%;
+    background-color: #55acee;
+    margin-top: 10px;
 }

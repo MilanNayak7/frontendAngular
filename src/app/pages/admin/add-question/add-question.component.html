@@ -2,7 +2,7 @@
     <div class="row mt20">
       <div class="col-md-12">
         <h1>
-          Add Question to <span style="font-weight: bold">{{ qTitle }}</span>
+          Add Question to <span class="title">{{ qTitle }}</span>
         </h1>
   
         <mat-card>
@@ -71,6 +71,7 @@
                   <mat-form-field class="w100">
                     <mat-label>Enter Option3</mat-label>
                     <input
+                    required
                       [(ngModel)]="question.option3"
                       name="option3"
                       type="text"
@@ -83,6 +84,7 @@
                   <mat-form-field class="w100">
                     <mat-label>Enter Option4</mat-label>
                     <input
+                    required
                       [(ngModel)]="question.option4"
                       name="option4"
                       type="text"
@@ -92,7 +94,7 @@
                 </div>
               </div>
   
-              <!-- answer -->
+             
               <mat-form-field class="w100">
                 <mat-label>Select Answer</mat-label>
                 <mat-select required [(ngModel)]="question.answer" name="answer">
@@ -120,7 +122,7 @@
               </mat-form-field>
   
               <div class="container text-center">
-                <button mat-raised-button color="accent">Add</button>
+                <button type="submit" class="btn btn-primary">Add</button>
               </div>
             </form>
           </mat-card-content>
@@ -129,5 +131,5 @@
     </div>
   </div>
   
-  <!-- {{ question | json }} -->
+
   

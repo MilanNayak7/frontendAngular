@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import { CategoryWiseQuizzesComponent } from './pages/admin/category-wise-quizzes/category-wise-quizzes.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
@@ -17,6 +18,7 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { StartComponent } from './pages/user/start/start.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
 import { AdminGuard } from './services/guard/admin.guard';
 import { NormalGuard } from './services/guard/normal.guard';
 
@@ -80,6 +82,12 @@ const routes: Routes = [
         path: 'add-question/:qid/:title',
         component: AddQuestionComponent
       }
+      ,
+      {
+        path: 'categories/category/:cid/quiz',
+        component: CategoryWiseQuizzesComponent,
+      }
+
 
     ]
   },
@@ -97,13 +105,18 @@ const routes: Routes = [
         path: 'instructions/:qid',
         component: InstructionsComponent
       }
+      ,
+      {
+        path: 'userprofile/:catId',
+        component: UserProfileComponent,
+      }
     ],
   },
   {
     path: 'start/:qid',
     component: StartComponent,
     canActivate: [NormalGuard],
-  },
+  }
 
 ];
 

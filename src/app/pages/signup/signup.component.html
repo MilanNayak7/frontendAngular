@@ -1,77 +1,89 @@
-<div class="container">
-    <div class="row" style="margin-top:20px;">
-        <div class="col-md-6 offset-md-3">
-            <div class="container text-center">
-                <img src="../../../assets/images/hat.png" style="height:20%;width: 20%;" alt="image">
+<section class="parentSection">
+    <mat-card class="container">
+        <div  class="container topParentDiv">
+            <div class="row d-flex align-items-center justify-content-center h-100">
+              <div class="col-md-8 col-lg-7 col-xl-6">
+                <img style="height:500px;" src="https://img.freepik.com/free-vector/exams-concept-illustration_114360-2754.jpg?w=740&t=st=1677870921~exp=1677871521~hmac=e0e12569e249c839b2f14c96fa8817ed922333411f291bfdb436261e9c09596b"
+                  class="img-fluid" alt="Phone image">
+              </div>
+              
+              <div class="col-md-7 col-lg-5 col-xl-5">
+              <div class="container">   
+                <mat-card style="background-color:var(--background);">
+                  <form class="form" (ngSubmit)="formSubmit()">
+                     
+                        <!-- Email input -->
+                        <div class="form-outline mb-1">
+                            <label class="form-label" for="form1Example13">User Name</label>
+                          <input type="text" id="form1Example13" class="form-control form-control-md" [(ngModel)]="user.userName"
+                          name="userName"
+                          required
+                          matInput
+                          placeholder="Enter here" />
+                        </div>
+              
+                        <!-- Password input -->
+                        <div class="form-outline mb-1">
+                            <label class="form-label" for="form1Example23">Password</label>
+                          <input type="password" id="form1Example23" class="form-control form-control-md"[(ngModel)]="user.password"
+                          name="password"
+                          type="password"
+                          required
+                          matInput
+                          placeholder="Enter here" />
+                        </div>
+
+                        <div class="parentDiv">
+                            <div class="childDiv form-outline mb-1">
+                                <label class="form-label" for="form1Example13">First Name</label>
+                              <input type="text" id="form1Example13" class="form-control form-control-md" [(ngModel)]="user.firstName"
+                              name="firstName"
+                              required
+                              matInput
+                              placeholder="First Name" />
+                            </div>
+                            <div class="childDiv form-outline mb-1">
+                                <label class="form-label" for="form1Example13">Last Name</label>
+                              <input type="text" id="form1Example13" class="form-control form-control-md" [(ngModel)]="user.lastName"
+                              name="lastName"
+                              required
+                              matInput
+                              placeholder="Last Name" />
+                            </div>
+                        </div>
+
+                        <div class="parentDiv">
+                            <div class="childDiv child-1 form-outline mb-1">
+                                <label class="form-label" for="form1Example13">Email Id</label>
+                              <input type="email" id="form1Example13" class="form-control form-control-md" [(ngModel)]="user.email"
+                              name="email"
+                              required
+                              matInput
+                              placeholder="Email Id" />
+                            </div>
+                            <div class="childDiv child-2 form-outline mb-3">
+                                <label class="form-label" for="form1Example13">Mobile</label>
+                              <input type="text" id="form1Example13" class="form-control form-control-md" [(ngModel)]="user.phone"
+                              name="phone"
+                              required
+                              matInput
+                              placeholder="Mobile"/>
+                            </div>
+                        </div>
+              
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary">SignUp</button>
+              
+                        <div class="divider d-flex align-items-center my-2">
+                          <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+                        </div>
+                        <button class="btn btn-primary FacebookBtn">Continue with Facebook</button>
+                          <button class="btn btn-primary TwitterBtn">Continue with Twitter</button>
+                      </form>
+                </mat-card>
+              </div>
+              </div>
             </div>
-
-            <h1 class="text-center">Register Here</h1>
-            <form (ngSubmit)="formSubmit()" >
-                <!-- Username field -->
-                <mat-form-field class="full-width" appearance="outline">
-                    <mat-label>UserName</mat-label>
-                    <input
-                    [(ngModel)]="user.userName"
-                    name="userName"
-                    matInput placeholder="Enter Your Name">
-                    <mat-hint>Enter hint</mat-hint>
-                </mat-form-field>
-
-                <!-- Password field -->
-                <mat-form-field class="full-width" appearance="outline">
-                    <mat-label>User Password</mat-label>
-                    <input 
-                    [(ngModel)]="user.password"
-                    name="password"
-                    matInput placeholder="Enter Password">
-                    <mat-hint>Enter hint</mat-hint>
-                </mat-form-field>
-
-                <!-- Password field -->
-                <mat-form-field class="full-width" appearance="outline">
-                    <mat-label>First Name</mat-label>
-                    <input 
-                    [(ngModel)]="user.firstName"
-                    name="firstName"
-                    matInput placeholder="Enter First Name">
-                    <mat-hint>Enter hint</mat-hint>
-                </mat-form-field>
-
-                <!-- Password field -->
-                <mat-form-field class="full-width" appearance="outline">
-                    <mat-label>Last Name</mat-label>
-                    <input 
-                    [(ngModel)]="user.lastName"
-                    name="lastName"
-                    matInput placeholder="Enter Last Name">
-                    <mat-hint>Enter hint</mat-hint>
-                </mat-form-field>
-
-                <!-- Password field -->
-                <mat-form-field class="full-width" appearance="outline">
-                    <mat-label>Email</mat-label>
-                    <input 
-                    [(ngModel)]="user.email"
-                    name="email"
-                    type="email" matInput placeholder="Enter Email">
-                    <mat-hint>Enter hint</mat-hint>
-                </mat-form-field>
-
-                <!-- Password field -->
-                <mat-form-field class="full-width" appearance="outline">
-                    <mat-label>Phone Number</mat-label>
-                    <input 
-                    [(ngModel)]="user.phone"
-                    name="phone"
-                    type="number" matInput placeholder="Enter Phone Number">
-                    <mat-hint>Enter hint</mat-hint>
-                </mat-form-field>
-
-                <div class="container text-center">
-                    <button type="submit" mat-raised-button color="primary">Submit</button>
-                    <button mat-raised-button color="accent" style="margin-left: 20px;">clear</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+          </div>
+    </mat-card>
+      </section>

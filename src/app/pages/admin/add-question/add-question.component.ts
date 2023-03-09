@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observer } from 'rxjs';
 import { QuestionService } from 'src/app/services/question.service';
 import Swal from 'sweetalert2';
 
@@ -50,23 +51,25 @@ constructor( private _route: ActivatedRoute,private _question: QuestionService){
     }
 
         //form submit
-        this._question.addQuestion(this.question).subscribe(
-          (data: any) => {
-            Swal.fire('Success ', 'Question Added. Add Another one', 'success');
-            this.question.content = '';
-            this.question.option1 = '';
-            this.question.option2 = '';
-            this.question.option3 = '';
-            this.question.option4 = '';
-            this.question.answer = '';
-          },
-          (error) => {
-            Swal.fire('Error', 'Error in adding question', 'error');
-          }
-        );
+        this._question.addQuestion(this.question).subscribe(this.questionObserver)
   }
 
-
-
-  
+  questionObserver: Observer<any> = {
+    next: value => {
+      Swal.fire('Success ', 'Question Added. Add Another one', 'success');
+      this.question.content = '';
+      this.question.option1 = '';
+      this.question.option2 = '';
+      this.question.option3 = '';
+      this.question.option4 = '';
+      this.question.answer = '';
+    },
+    error: err => {
+      console.error(err);
+      Swal.fire('server error !!','Error in loading the data','success');
+    },
+    complete: () => {
+      console.log('Done!');
+    }
+  };
 }

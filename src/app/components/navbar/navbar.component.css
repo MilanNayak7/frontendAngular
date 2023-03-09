@@ -1,3 +1,50 @@
 .example-spacer {
     flex: 1 1 auto;
   }
+
+  .navbar-brand{
+    color: blueviolet;
+  }
+
+  .navbar-brand{
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+
+  .nav-link{
+    font-weight: 400;
+    font-size: medium;
+  }
+
+  .nav-link:hover{
+    color: black;
+    font-weight: 500;
+  }
+
+  .aaction{
+    font-size: medium;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+  }
+
+  .btn{
+    border-radius: 20px;
+    background-color: blue;
+    margin-right:15px;
+  }
+
+  .btn:hover{
+    border-color:brown;
+    background-color:white;
+    color: black;
+  }
+
+  .spanLogin{
+    margin-left:60%;
+  }
+
+  .spanLogout{
+    margin-left:65%;
+  }
+

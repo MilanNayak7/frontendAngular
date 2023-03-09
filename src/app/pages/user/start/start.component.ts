@@ -112,21 +112,5 @@ window.print();
         console.log(error);
       }
     );
-    // this.isSubmit = true;
-    // this.questions.forEach((q) => {
-    //   if (q.givenAnswer == q.answer) {
-    //     this.correctAnswers++;
-    //     let marksSingle =
-    //       this.questions[0].quiz.maxMarks / this.questions.length;
-    //     this.marksGot += marksSingle;
-    //   }
-    //   if (q.givenAnswer.trim() != '') {
-    //     this.attempted++;
-    //   }
-    // });
-    // console.log('Correct Answers :' + this.correctAnswers);
-    // console.log('Marks Got ' + this.marksGot);
-    // console.log('attempted ' + this.attempted);
-    // console.log(this.questions);
   }
 }

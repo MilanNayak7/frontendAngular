@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Observer } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2'
 
@@ -32,16 +33,20 @@ export class SignupComponent {
       return;
     }
 
-    this.userService.addUser(this.user).subscribe(
-      (data:any)=>{
-        Swal.fire('Success','User is registered with id'+data.id,'success');
-      },
-      (error)=>{
-        console.log(error)
-        alert('something went wrong');
-      }
-    )
-
+    this.userService.addUser(this.user).subscribe(this.observer)
   }
+
+  observer: Observer<any> = {
+    next: value => {
+      Swal.fire('Success','User is registered with id'+value.id,'success');
+    },
+    error: err => {
+      console.error(err);
+      Swal.fire('server error !!','Error in loading data','error');
+    },
+    complete: () => {
+      console.log('Done!');
+    }
+  };
 
 }

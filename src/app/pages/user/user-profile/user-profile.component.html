@@ -1,0 +1,96 @@
+<mat-card>
+    <div class="container emp-profile">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="profile-head">
+                        <p class="boldParagraph">
+                            {{user.firstName}} {{user.lastName}}
+                        </p>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                    aria-controls="home" aria-selected="true">User Profile</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                    aria-controls="profile" aria-selected="false">Timeline</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+                            alt="" />
+                        <div class="file btn btn-lg btn-primary">
+                            Change Photo
+                            <input type="file" name="file" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="label">User Id</label>
+                                    <!-- <p>{{user.id}}</p> -->
+                                    <input type="text" readonly id="form1Example23" class="form-control form-control-md"[(ngModel)]="user.id"name="id"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="label">Username</label>
+                                    <!-- <p>{{user.username}}</p> -->
+                                    <input type="text" readonly id="form1Example23" class="form-control form-control-md"[(ngModel)]="user.username"name="username"/>
+                                </div>
+                            </div>
+                            <div class="parent">
+                                <div class="row childRow">
+                                    <div class="col-md-6">
+                                        <label class="label">First Name</label>
+                                        <!-- <p>{{user.firstName}}</p> -->
+                                        <input type="text" readonly id="form1Example23" class="form-control form-control-md"[(ngModel)]="user.firstName"name="firstName"/>
+                                    </div>
+                                </div>
+                                <div class="row childRow">
+                                    <div class="col-md-6">
+                                        <label class="label">Last Name</label>
+                                        <!-- <p>{{user.lastName}}</p> -->
+                                        <input type="text" readonly id="form1Example23" class="form-control form-control-md"[(ngModel)]="user.lastName"name="lastName"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="parent">
+                                <div class="row childRow">
+                                    <div class="col-md-6">
+                                        <label class="label">Email</label>
+                                        <!-- <p>{{user.email}}</p> -->
+                                        <input type="text" readonly id="form1Example23" class="form-control form-control-md"[(ngModel)]="user.email"name="email"/>
+                                    </div>
+                                </div>
+                                <div class="row childRow">
+                                    <div class="col-md-6">
+                                        <label class="label">Phone</label>
+                                        <!-- <p>{{user.phone}}</p> -->
+                                        <input type="text" readonly  id="form1Example23" class="form-control form-control-md"[(ngModel)]="user.phone"name="phone"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="label">User Status</label>
+                                    <!-- <p>Active</p> -->
+                                    <input type="text" readonly   id="form1Example23" class="form-control form-control-md" name="lastName" value="Active"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</mat-card>

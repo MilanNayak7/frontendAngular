@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observer } from 'rxjs';
 import { QuizService } from 'src/app/services/quiz.service';
 import Swal from 'sweetalert2';
 
@@ -22,18 +23,25 @@ export class InstructionsComponent implements OnInit {
     this.qid = this.route.snapshot.params['qid'];
     // console.log(this.qid);
 
-    this._quiz.getQuiz(this.qid).subscribe(
-      (data: any) => {
-        // console.log(data);
-        this.quiz = data;
-      },
-      (error) => {
-        console.log(error);
-        alert('Error in loading quiz data');
-      }
-    );
+    this._quiz.getQuiz(this.qid).subscribe(this.myObserver)
   }
 
+
+
+  myObserver: Observer<any> = {
+    next: value => {
+      this.quiz = value;
+    },
+    error: err => {
+      Swal.fire('server error !!','Error in loading the data','error');
+    },
+    complete: () => {
+      console.log('Done!');
+    }
+  };
+
+
+  
   startQuiz() {
     Swal.fire({
       title: 'Do you want to start the quiz?',

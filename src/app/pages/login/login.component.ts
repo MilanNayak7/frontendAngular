@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { Observer } from 'rxjs';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -28,42 +29,44 @@ export class LoginComponent {
       return;
     }
 
-    this.login.generateToken(this.loginData).subscribe(
-      (data: any) => {
-        console.log("success");
-        console.log(data);
-        this.login.loginUser(data.token);
-
-        this.login.getCurrrentUser().subscribe(
-          (user: any) => {
-            this.login.setUser(user);
-            console.log(user);
-            if (this.login.getUserRole() == 'ADMIN') {
-
-              //window.location.href = '/admin';
-              this.router.navigate(['admin']);
-              this.login.loginStatusSubject.next(true);
-
-            } else if (this.login.getUserRole() == 'NORMAL') {
-
-              //window.location.href = '/user-dashboard';
-              this.router.navigate(['user-dashboard/0']);
-              this.login.loginStatusSubject.next(true);
-            }
-            else {
-              this.login.logout();
-            }
-
-          });
-      },
-      (error) => {
-        console.log("error");
-        console.log(error);
-        this.snack.open('Invalid Details !! Try again', '', {
-          duration: 3000,
-        });
-      }
-    );
-
+    this.login.generateToken(this.loginData).subscribe(this.tokenObserver)
   }
+
+//observer
+tokenObserver: Observer<any> = {
+  next: value => {
+    this.login.loginUser(value.token);
+
+    this.login.getCurrrentUser().subscribe(
+      (user: any) => {
+        this.login.setUser(user);
+        console.log(user);
+        if (this.login.getUserRole() == 'ADMIN') {
+
+          //window.location.href = '/admin';
+          this.router.navigate(['admin']);
+          this.login.loginStatusSubject.next(true);
+
+        } else if (this.login.getUserRole() == 'NORMAL') {
+
+          //window.location.href = '/user-dashboard';
+          this.router.navigate(['user-dashboard/0']);
+          this.login.loginStatusSubject.next(true);
+        }
+        else {
+          this.login.logout();
+        }
+
+      });
+  },
+  error: err => {
+    this.snack.open('Invalid Details !! Try again', '', {
+      duration: 3000,
+    });
+  },
+
+  complete: () => {
+    console.log('Done!');
+  }
+};
 }

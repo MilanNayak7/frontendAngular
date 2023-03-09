@@ -1,4 +1,25 @@
 .w100 {
     width: 100%;
   }
+
+  .headPara{
+    font-size: x-large;
+    font-weight: 600;
+    color: blue;
+  }
+
+  .parentCard{
+    margin-top:10px;
+  }
+
+  .parentDiv{
+    margin-left:20px;
+     margin-top: 20px;
+     margin-right: 20px;
+     margin-bottom: 20px;
+  }
+
+  .btn{
+    margin-top:15px;
+  }
   

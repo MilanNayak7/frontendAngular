@@ -26,11 +26,4 @@ constructor(private addCat:CategoryService,private _snack:MatSnackBar){}
     }
     this.addCat.addCategory(this.category);
   }
-
- 
-
- 
-
-
-
 }

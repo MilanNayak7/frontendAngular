@@ -41,6 +41,9 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
 import { StartComponent } from './pages/user/start/start.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CategoryWiseQuizzesComponent } from './pages/admin/category-wise-quizzes/category-wise-quizzes.component';
+import { UserProfileComponent } from './pages/user/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +69,8 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     LoadQuizComponent,
     InstructionsComponent,
     StartComponent,
+    CategoryWiseQuizzesComponent,
+    UserProfileComponent,
     
     
   ],
@@ -86,7 +91,8 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     MatSlideToggleModule,
     MatSelectModule,
     MatProgressSpinnerModule,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule,
+    NgbModule
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true

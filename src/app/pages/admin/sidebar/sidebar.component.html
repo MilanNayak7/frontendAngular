@@ -1,12 +1,34 @@
-<mat-card>
+<mat-card >
     <mat-action-list>
-        <div mat-subheader>Menu</div> 
-        <button mat-list-item routerLink="/admin"><mat-icon mat-list-icon>home</mat-icon>Home</button>
-        <button mat-list-item routerLink="/admin/profile"><mat-icon mat-list-icon>account_circle</mat-icon>Profile</button>
-        <button mat-list-item routerLink="/admin/categories"><mat-icon mat-list-icon>add_shopping_cart</mat-icon>category</button>
-        <button mat-list-item routerLink="/admin/add-category"><mat-icon mat-list-icon>folder</mat-icon>Add Categories</button>
-        <button mat-list-item routerLink="/admin/quizzes"><mat-icon mat-list-icon>book</mat-icon>Quizzzes</button>
-        <button mat-list-item routerLink="/admin/add-quiz"><mat-icon mat-list-icon>add</mat-icon>Add Quiz</button>
-        <button mat-list-item routerLink="/admin/profile"><mat-icon mat-list-icon>logout</mat-icon>Logout</button>
+        <div class="sideBarHeader">Admin
+        </div>
+        <hr>
+        <button mat-list-item routerLink="/admin">
+            <i class="fa fa-home"></i><span class="para">Home</span></button>
+
+
+        <!-- <button mat-list-item routerLink="/admin/profile">
+            <i class="fa fa-user"></i><span class="para">Profile</span></button> -->
+
+
+        <button mat-list-item routerLink="/admin/categories">
+            <i class="fa fa-book"></i><span class="para">All Category</span></button>
+
+
+        <button mat-list-item routerLink="/admin/add-category">
+            <i class="fa fa-plus"></i><span class="para">Add Categories</span></button>
+
+
+        <button mat-list-item routerLink="/admin/quizzes">
+            <i class="fa fa-tasks"></i><span class="para">Quizzzes</span></button>
+
+
+        <button mat-list-item routerLink="/admin/add-quiz">
+            <i class="fa fa-plus"></i><span class="para">Add Quiz</span></button>
+
+
+        <!-- <button mat-list-item routerLink="/admin/profile">
+            <i class="fa fa-sign-out"></i><span class="para">Logout</span></button> -->
+
     </mat-action-list>
 </mat-card>

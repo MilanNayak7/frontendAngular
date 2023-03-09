@@ -3,24 +3,6 @@
     max-height: 250px;
     border-radius: 50px;
 }
-
-.table{
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.table tr td{
-    padding: 15px 10px;
-    border: 0.5px solid #e2e2e2;
-}
-
-
-
-
-/* copy past */
-
-
-
 .emp-profile{
     padding: 3%;
     margin-top: 3%;
@@ -126,4 +108,20 @@
     color: #0062cc;
     font-size: x-large;
     letter-spacing:1px;
+}
+
+.parent{
+    display: flex;
+}
+
+.childRow{
+    flex:1;
+}
+
+.form-control{
+    margin-bottom:20px;
+}
+
+.label{
+    margin-bottom:5px;
 }

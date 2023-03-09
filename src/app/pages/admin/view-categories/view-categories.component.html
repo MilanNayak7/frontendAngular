@@ -1,5 +1,6 @@
     <mat-list>
-        <h2>All Categories</h2>
+        <p class="boldPara">All Categories</p>
+        <hr>
         <div *ngFor="let c of categores">
             <div class="row">
                 <div class="col-lg-8 mb-4">
@@ -12,8 +13,8 @@
                                {{c.description}}
                             </p>
       
-                            <a href="#" class="btn btn-outline-primary btn-sm">
-                                Card link
+                            <a class="btn btn-outline-primary btn-sm" [routerLink]="'/admin/categories/category/'+c.cid+'/quiz'">
+                                view quizzes
                             </a>
                          
                         </div>

@@ -3,9 +3,9 @@
       <div class="row">
         <div class="col-md-2">
           <!-- instructions -->
-   <mat-card class="mt20">
+   <mat-card class="mt10">
     <mat-card-content>
-      <h2>instructions</h2>
+      <h2>Instructions</h2>
       <ul>
         <li>Do not refresh the page otherwise you will get new questions.</li>
         <li>Do not switch the tab.</li>
@@ -17,8 +17,8 @@
         <div class="col-md-8">
           <!-- questions -->
           <ng-container *ngIf="questions">
-            <h1 class="mt20">
-              On Going Quiz <b>{{ questions[0].quiz.title }}</b>
+            <h1 class="mt10">
+              On Going Quiz <b class="boldPara">{{ questions[0].quiz.title }}</b>
             </h1>
           </ng-container>
   
@@ -27,23 +27,25 @@
             <mat-card-content>
               <p>
                 <b>Q {{ i + 1 }})</b>
-                <span class="ml10" [innerHTML]="q.content"></span>
+                <span class="ml10 questionForn" [innerHTML]=" q.content"></span>
               </p>
   
               <mat-divider> </mat-divider>
               <br />
   
-              <div class="row mt20">
-                <div class="col-md-6">
+              <div class="row mt20 ">
+                <div class="col-md-6 questionForn">
                   <input
+                
                     type="radio"
                     [value]="q.option1"
                     [name]=i.toString()
                     [(ngModel)]="q.givenAnswer"
                   />{{ q.option1 }}
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 questionForn">
                   <input
+                  
                     type="radio"
                     [value]="q.option2"
                     [name]=i.toString()
@@ -53,16 +55,18 @@
               </div>
   
               <div class="row mt20">
-                <div class="col-md-6">
+                <div class="col-md-6 questionForn">
                   <input
+            
                     type="radio"
                     [value]="q.option3"
                     [name]=i.toString()
                     [(ngModel)]="q.givenAnswer"
                   />{{ q.option3 }}
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 questionForn">
                   <input
+                  
                     type="radio"
                     [value]="q.option4"
                     [name]=i.toString()
@@ -82,7 +86,7 @@
         <div class="col-md-2">
           <!-- progress -->
   
-          <mat-card style="margin-top: 70px">
+          <mat-card class="mt10">
             <mat-card-header>
               <mat-card-title> Progress </mat-card-title>
               <mat-card-subtitle>
@@ -110,22 +114,32 @@
       <div class="col-md-6 offset-md-3">
         <mat-card>
           <mat-card-header>
-            <mat-card-title> Quiz Result </mat-card-title>
+            <mat-card-title class="headFontBlod mb20"> Quiz Result </mat-card-title>
           </mat-card-header>
           <mat-card-content class="text-center">
-            <h1>Marks Got : {{ marksGot }}</h1>
-            <h1>Correct Answers : {{ correctAnswers }}</h1>
-            <h1>Questions Attempted :{{ attempted }}</h1>
+            <p class="fontBold mark">Marks Got : {{ marksGot }}</p>
+            <p class="fontBold">Correct Answers : {{ correctAnswers }}</p>
+            <p class="fontBold">Questions Attempted :{{ attempted }}</p>
           </mat-card-content>
           <mat-card-actions class="text-center">
-            <button (click)="printPage()" mat-raised-button color="primary">Print</button>
-            <button
+           
+            <!-- <button
               mat-raised-button
               color="accent"
               [routerLink]="'/user-dashboard/0'"
             >
               Home
-            </button>
+            </button> -->
+            <div class="parent">
+              <div class="child">
+                <button (click)="printPage()" mat-raised-button color="primary">Print</button>
+              </div>
+              <div class="child">
+                <button [routerLink]="'/user-dashboard/0'" class="btn btn-primary">Home</button>
+              </div>
+            </div>
+
+            
           </mat-card-actions>
         </mat-card>
       </div>

@@ -1,0 +1,43 @@
+.card-title{
+    font-size: x-large;
+    font-weight: 500;
+    color: blue;
+}
+
+.subTitle{
+    font-weight:500;
+}
+
+.table-header{
+    font-size: large;
+    font-weight: 500;
+}
+
+.button-parent{
+    display: flex;
+}
+
+.child{
+    flex:1;
+}
+
+.btn{
+    color:black;
+    font-weight:500;
+    border-color:blueviolet;
+}
+
+.btn:hover{
+       background-color: blueviolet;
+       color: wheat;
+}
+
+.parentCard{
+    margin: auto;
+}
+
+.boldPara{
+    font-size: x-large;
+    color: blue;
+    font-weight: 600;
+}

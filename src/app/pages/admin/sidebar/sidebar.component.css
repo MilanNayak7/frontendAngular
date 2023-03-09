@@ -1,0 +1,21 @@
+.fa{
+    margin-right:5px;
+}
+
+
+.sideBarHeader{
+    text-align:start;
+    margin-left:15px;
+    font-weight:500;
+    font-size: x-large;
+}
+
+.para{
+font-size:large;
+font-weight: 500;
+}
+
+.para:hover{
+color: blueviolet;
+}
+

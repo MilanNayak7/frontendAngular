@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observer } from 'rxjs';
 import { CategoryService } from 'src/app/services/category.service';
 import Swal from 'sweetalert2';
 
@@ -21,15 +22,19 @@ export class ViewCategoriesComponent {
 
 
   ngOnInit(): void {
-    this.category.categories().subscribe((data:any)=>{
-      this.categores = data;
-      console.log(this.categores);
-    },
-
-    (error)=>{
-      console.log(error);
-      Swal.fire("Error !!","error in loading","error");
-    }
-    )
+    this.category.categories().subscribe(this.categoryObserver)
   }
+
+  categoryObserver: Observer<any> = {
+    next: value => {
+      this.categores = value;
+    },
+    error: err => {
+      Swal.fire('server error !!','Error in loading the data','success');
+    },
+    complete: () => {
+      console.log('Done!');
+    }
+  };
+
 }
